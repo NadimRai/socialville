@@ -7,6 +7,8 @@
     <%= f.input :username, required: true, autofocus: true, label: false,  
         placeholder: "Enter Your Username" %>
     <%= f.input :email, required: true, autofocus: false %>
+    <%= f.input :image, as: :file %>  <%= image_tag @user.image.url(:thumb), 
+                                        class: "img-circle text-center" %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>

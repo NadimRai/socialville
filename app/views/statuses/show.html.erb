@@ -1,14 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @status.name %>
-</p>
+<span class="admin"><%= link_to 'Edit', edit_status_path(@status) %></span>
 
-<p>
-  <strong>Content:</strong>
-  <%= @status.content %>
-</p>
 
-<%= link_to 'Edit', edit_status_path(@status) %> |
-<%= link_to 'Back', statuses_path %>
+<%= render 'statuses/show' %>
+<div class="post-list">
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="picture">
+                <%= image_tag @status.user.image.url(:thumb), class: "img-circle" %>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <h4>    
+                <label class="label label-info"><%= @status.user.username %></label>
+            </h4>
+            <h5> 
+            <i class="fa fa-calendar"></i>
+            <%= time_ago_in_words(@status.created_at) + " ago" %>
+            </h5>
+            <p class="description"><%= @status.content %></p>    
+        </div>
+		<div class="col-sm-2" data-no-turbolink="">
+      	<%= link_to 'Back', statuses_path, 
+   		class: "btn btn-info btn-download btn-round pull-right makeLoading fa fa-share" %>  </div>
+    </div>
+</div>

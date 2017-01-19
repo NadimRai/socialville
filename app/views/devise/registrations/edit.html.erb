@@ -7,7 +7,7 @@
     <%= f.input :username, required: true, autofocus: true, label: false,  
         placeholder: "Enter Your Username" %>
     <%= f.input :email, required: true, autofocus: false %>
-    <%= f.input :image, as: :file %>  <%= image_tag @user.image.url(:thumb), 
+    <%= f.input :image, as: :file %>  <%= image_tag @user.image.url(:micro), 
                                         class: "img-circle text-center" %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -23,6 +23,9 @@
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
   </div>
+  <%= image_tag @user.image.url(:micro), class: "img-circle text-center" %>
+  <%= image_tag @user.image.url(:micro), class: "img-circle text-center" %>
+  <%= image_tag @user.image.url(:micro), class: "img-circle text-center" %>
 <% end %>
 
 <h3>Cancel my account</h3>

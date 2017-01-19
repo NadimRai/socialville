@@ -1,0 +1,8 @@
+<%= link_to user_path(user.username) do %>
+<%= image_tag user.image.url(:micro), class: "img-circle" %>                                       
+<% end %>
+
+<h3><%= user.username %></h3>
+<% if current_user %>
+<p><%= action_buttons(user)%></p>
+<% end %>

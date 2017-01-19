@@ -1,0 +1,11 @@
+.status .admin {
+	display: none;
+}
+
+.status.hover .admin {
+	display: inline;
+}
+
+.no-bullets {
+	list-style-type:none;
+}
